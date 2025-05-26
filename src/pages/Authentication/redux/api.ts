@@ -2,8 +2,8 @@ import toast from 'react-hot-toast';
 import baseApi from '../../../core/baseApi';
 import { DefaultResponse } from '../../../core/interface';
 import { LoginPayload, LoginResponse, SignUpPayload } from './interface';
-import { setToken } from "../../../redux/slices/tokenSlice";
-import { storage } from "../../../core/storage";
+import { setToken } from '../../../redux/slices/tokenSlice';
+import { storage } from '../../../core/storage';
 
 export const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -16,9 +16,19 @@ export const authApi = baseApi.injectEndpoints({
       onQueryStarted: async (_, { dispatch, queryFulfilled }) => {
         try {
           const { data } = await queryFulfilled;
-          dispatch(setToken(data.result.data.access_token))
-          storage.setToken(data.result.data.access_token)
-          toast.success(data.result.message);
+          console.log(data);
+          dispatch(setToken(data.result.data.access_token));
+          storage.setToken(data.result.data.access_token);
+          fetch('http://sports_tracker.test/api/user', {
+            headers: {
+              Authorization: `Bearer ${data.result.data.access_token}`,
+            },
+          })
+            .then((res) => res.json())
+            .then((res) => {
+              storage.setUser(res.result.data.user);
+              toast.success(data.result.message);
+            });
         } catch ({ error }: any) {
           toast.error(error.data.message);
         }

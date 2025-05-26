@@ -60,13 +60,13 @@ export default function SiteCoaches(props: {
   const handleSelect = async () => {
     const selectedCoach = freeCoaches?.result.data.find(
       (coach) =>
-        `${coach.profile.firstName} ${coach.profile.lastName}` === value,
+        `${coach.profile.first_name} ${coach.profile.last_name}` === value,
     );
     if (selectedCoach) {
       setcoachId(selectedCoach.id);
       await onSubmit({
-        siteId,
-        userId: selectedCoach.id,
+        site_id:siteId,
+        user_id: selectedCoach.id,
       });
     } else {
       toast.error('Please select the correct name of coach');
@@ -127,7 +127,7 @@ export default function SiteCoaches(props: {
                 onChange={setValue}
                 data={freeCoaches?.result.data.map(
                   (coach) =>
-                    `${coach.profile.firstName} ${coach.profile.lastName}`,
+                    `${coach.profile.first_name} ${coach.profile.last_name}`,
                 )}
               />
               {freeCoaches?.result.data.length === 0 ? (
@@ -159,8 +159,8 @@ export default function SiteCoaches(props: {
                     <div className="flex-1 min-w-0 ms-4">
                       <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                         <span>
-                          {coach.user.profile.firstName} &nbsp;
-                          {coach.user.profile.lastName}
+                          {coach.user.profile.first_name} &nbsp;
+                          {coach.user.profile.last_name}
                         </span>
                         <span className="text-gray-500 font-semibold ml-1 text-xs">
                           {`${countryList().getValue(

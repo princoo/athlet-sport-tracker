@@ -8,8 +8,8 @@ export interface Role {
 export interface Profile {
   id: string;
   userId: string;
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   nationality: string;
   gender: string;
   phone: string;
@@ -21,7 +21,7 @@ export interface Profile {
 
 export interface User {
   id: string;
-  userName: string;
+  user_name: string;
   email: string;
   password: string;
   roleId: string;

@@ -38,8 +38,8 @@ export default function SinglePlayer(props: {
             <div>
               <h3 className="text-xl font-medium text-theme-light dark:text-white">
                 <span>
-                  {player.firstName} &nbsp;
-                  {player.lastName}
+                  {player.first_name} &nbsp;
+                  {player.last_name}
                 </span>
               </h3>
 
@@ -57,8 +57,8 @@ export default function SinglePlayer(props: {
                 </p>
                 <p className="text-xs  text-black-2 dark:text-white">
                   <span>
-                    {player.firstName} &nbsp;
-                    {player.lastName}
+                    {player.first_name} &nbsp;
+                    {player.last_name}
                   </span>
                 </p>
               </div>

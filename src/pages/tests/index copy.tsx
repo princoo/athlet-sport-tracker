@@ -34,7 +34,6 @@ export default function Tests() {
   // const [isCoacherModalOpen, setisCoacherModalOpen] = useState(false);
   // const [siteCoaches, setsiteCoaches] = useState<SiteCoach[]>([]);
   const [testToAct, settestToAct] = useState<Test | null>(null);
-
   const handleUpdateOpen = (test: Test) => {
     setIsUpdateModalOpen(true);
     settestToAct(test);

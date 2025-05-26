@@ -8,7 +8,7 @@ interface ProtectedRouteProps {
 
 const ProtectedRoute = ({ element, requiredRole }: ProtectedRouteProps) => {
   const decodedUser = decodeToken();
-  if (!requiredRole.includes(decodedUser?.role.roleName!)) {
+  if (!requiredRole.includes(decodedUser?.role.role_name!)) {
     // Redirect to "Not Authorized" page if the user doesn't have the correct role
     return <Navigate to="/not-authorized" />;
   }

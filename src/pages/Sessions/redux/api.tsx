@@ -78,7 +78,8 @@ export const sessionsApi = baseApi.injectEndpoints({
           const { data } = await queryFulfilled;
           toast.success(data.result.message);
         } catch ({ error }: any) {
-          toast.error(error.data.message);
+          console.log(error)
+          toast.error(error.data.result.message);
         }
       },
     }),

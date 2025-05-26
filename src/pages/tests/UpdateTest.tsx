@@ -30,11 +30,11 @@ export default function UpdateTest(props: {
 
   useEffect(() => {
     if (test) {
-      setSelectedValues(test.requiredMetrics);
+      setSelectedValues(test.required_metrics);
       reset({
         name: test.name,
         description: test.description,
-        requiredMetrics: test.requiredMetrics,
+        required_metrics: test.required_metrics,
       });
     }
   }, [test, reset]);
@@ -55,8 +55,8 @@ export default function UpdateTest(props: {
   }
   const handleMetricsChange = (values: string[]) => {
     setSelectedValues(values);
-    setValue('requiredMetrics', values as TestMetrics[]); // Set the value in the form
-    trigger('requiredMetrics'); // Trigger the validation manually
+    setValue('required_metrics', values as TestMetrics[]); // Set the value in the form
+    trigger('required_metrics'); // Trigger the validation manually
   };
 
   return (
@@ -154,14 +154,14 @@ export default function UpdateTest(props: {
                       }}
                     />
                   </div>
-                  {errors.requiredMetrics && (
+                  {errors.required_metrics && (
                     <div className="text-red-500">
-                      {errors.requiredMetrics.message}
+                      {errors.required_metrics.message}
                     </div>
                   )}
                   <input
                     type="hidden"
-                    {...register('requiredMetrics', {
+                    {...register('required_metrics', {
                       validate: (value) =>
                         (value && value.length > 0) ||
                         'You must select at least one Metric',

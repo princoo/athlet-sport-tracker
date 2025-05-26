@@ -70,7 +70,7 @@ export default function SessionsList() {
     // throw  sessionsError;
     // showBoundary(sessionsError);
   }
-
+console.log(sessions)
   const menus = [
     {
       label: 'Edit',
@@ -154,7 +154,7 @@ export default function SessionsList() {
                         Session is {session.status.toLowerCase()}
                       </p>
                       <p className="text-sm text-gray-800">
-                        The training team will conduct {session.tests.length}{' '}
+                        The training team will conduct {session.session_tests.length}{' '}
                         test(s) associated with this session.
                       </p>
                     </li>

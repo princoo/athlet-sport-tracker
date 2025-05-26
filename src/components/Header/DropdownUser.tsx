@@ -25,9 +25,9 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white capitalize">
-            {decodedUser?.userName}
+            {decodedUser?.user_name}
           </span>
-          <span className="block text-xs">{decodedUser?.role.roleName}</span>
+          <span className="block text-xs">{decodedUser?.role.role_name}</span>
         </span>
 
         <span className="h-12 w-12 rounded-full bg-gray-200 dark:bg-gray-500 flex justify-center items-center">

@@ -4,22 +4,22 @@ export interface Site {
   province: string;
   district: string;
   coaches: SiteCoach[];
-  createdAt: string;
-  updatedAt: string;
+  created_at: string;
+  updated_at: string;
 }
 export interface SiteCoach {
   user: {
     id: string;
     email: string;
-    userName: string;
+    user_name: string;
     role: {
       roleName: string;
     };
     profile: {
       nationality: string;
       phone: string;
-      firstName: string;
-      lastName: string;
+      first_name: string;
+      last_name: string;
       avatarId: string | null;
     };
   };

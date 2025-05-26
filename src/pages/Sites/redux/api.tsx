@@ -66,7 +66,7 @@ export const siteApi = baseApi.injectEndpoints({
         }
       },
     }),
-    addCoachOnSite: builder.mutation<DefaultResponse, {userId: string, siteId: string}>({
+    addCoachOnSite: builder.mutation<DefaultResponse, {user_id: string, site_id: string}>({
       query: (SitePayload) => ({
         url: 'coach-on-site',
         method: 'POST',

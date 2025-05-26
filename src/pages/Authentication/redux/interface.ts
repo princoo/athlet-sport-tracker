@@ -6,7 +6,7 @@ export interface LoginResponse {
 //     password: string
 // }
 export interface LoginPayload {
-    username: string,
+    email: string,
     password: string,
 };
 export interface SignUpPayload{
@@ -21,7 +21,7 @@ export interface SignUpPayload{
 };
 
 export enum Gender {
-    MALE = 'MALE',
-    FEMALE = 'FEMALE',
-    OTHER = 'OTHER',
+    MALE = 'Male',
+    FEMALE = 'Female',
+    OTHER = 'Other',
 }

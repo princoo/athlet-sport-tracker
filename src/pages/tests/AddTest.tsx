@@ -1,7 +1,7 @@
 // import React, { useState } from 'react';
 import { IoCloseOutline } from 'react-icons/io5';
 import { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { TestMetrics, TestPayload } from './interface copy';
 import { useCreateTestMutation } from './redux/api copy';
 import Modal from '../../components/Modal';
@@ -22,11 +22,15 @@ export default function AddTest(props: {
     register,
     handleSubmit,
     setValue,
+    control,
     trigger,
     formState: { errors },
   } = useForm<TestPayload>();
 
   async function handleFormSubmit(data: TestPayload) {
+    const req = data.required_metrics as unknown as string
+    console.log(data);
+
     await onSubmit(data);
   }
   useEffect(() => {
@@ -41,9 +45,10 @@ export default function AddTest(props: {
     onClose();
   }
   const handleMetricsChange = (values: string[]) => {
+    console.log(values);
     setSelectedValues(values);
-    setValue('requiredMetrics', values as TestMetrics[]); // Set the value in the form
-    trigger('requiredMetrics'); // Trigger the validation manually
+    setValue('required_metrics', values as TestMetrics[]); // Set the value in the form
+    trigger('required_metrics'); // Trigger the validation manually
   };
 
   return (
@@ -112,7 +117,9 @@ export default function AddTest(props: {
                     // placeholder="Test name"
                   />
                   {errors.description && (
-                    <div className="text-red-500">{errors.description.message}</div>
+                    <div className="text-red-500">
+                      {errors.description.message}
+                    </div>
                   )}
                 </div>
                 <div className="col-span-2">
@@ -123,6 +130,7 @@ export default function AddTest(props: {
                     Metric(s)
                   </label>
                   <div className="relative">
+
                     <MultiSelect
                       placeholder="Pick Metrics"
                       data={metricsOptions}
@@ -138,14 +146,14 @@ export default function AddTest(props: {
                       }}
                     />
                   </div>
-                  {errors.requiredMetrics && (
+                  {errors.required_metrics && (
                     <div className="text-red-500">
-                      {errors.requiredMetrics.message}
+                      {errors.required_metrics.message}
                     </div>
                   )}
                   <input
                     type="hidden"
-                    {...register('requiredMetrics', {
+                    {...register('required_metrics', {
                       validate: (value) =>
                         (value && value.length > 0) ||
                         'You must select at least one Metric',

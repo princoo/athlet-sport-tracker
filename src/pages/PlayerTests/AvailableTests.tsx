@@ -3,14 +3,14 @@ import { SiVlcmediaplayer } from 'react-icons/si';
 import { SessionTest } from './interface';
 import { Test } from '../tests/interface copy';
 
-export function AccordionLabel({ name: label, requiredMetrics }: Test) {
+export function AccordionLabel({ name: label, required_metrics }: Test) {
   return (
     <Group wrap="nowrap">
       <SiVlcmediaplayer className="text-2xl text-gray-500" />
       <div>
         <Text className="capitalize dark:text-white">{label}</Text>
         <Text size="sm" c="dimmed" fw={400}>
-          {requiredMetrics.join(', ')}
+          {required_metrics.join(', ')}
         </Text>
       </div>
     </Group>

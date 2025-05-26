@@ -102,7 +102,7 @@ export default function SitesList() {
     {
       Header: 'Added on',
       accessor: (row: Site) => {
-        const date = new Date(row.createdAt);
+        const date = new Date(row.created_at);
         const formattedDate = date.toLocaleDateString('en-US', {
           day: 'numeric',
           month: 'short',

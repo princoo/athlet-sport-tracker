@@ -8,6 +8,7 @@ export default function PopOver(props: { row: Test }) {
 
   const open = () => setOpened(true);
   const close = () => setOpened(false);
+  console.log(row)
   return (
     <div className="mt-3">
     <Popover
@@ -19,13 +20,13 @@ export default function PopOver(props: { row: Test }) {
     >
       <Popover.Target>
         <span onMouseEnter={open} onMouseLeave={close} className="cursor-pointer">
-          {row.requiredMetrics.length}
+          {row.required_metrics.length}
         </span>
       </Popover.Target>
       <Popover.Dropdown className="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-md shadow-lg">
         <ul className="text-sm capitalize text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-          {row.requiredMetrics.map((metric,idx) => (
-            <li key={idx}  className={`w-full px-4 py-2 ${idx === row.requiredMetrics.length-1 ? "" : "border-b"} border-gray-200 rounded-t-lg dark:border-gray-600`}>
+          {row.required_metrics.map((metric,idx) => (
+            <li key={idx}  className={`w-full px-4 py-2 ${idx === row.required_metrics.length-1 ? "" : "border-b"} border-gray-200 rounded-t-lg dark:border-gray-600`}>
               {metric}
             </li>
           ))}

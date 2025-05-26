@@ -20,10 +20,14 @@ const NavItem: React.FC<NavItemProps> = ({
   const location = useLocation();
   const { pathname } = location;
   const decodedUser = decodeToken();
+  console.log(decodedUser.role.role_name)
   // Render the nav item only if the user role matches the required role
-  if (!requiredRole.includes(decodedUser?.role.roleName!)) {
+  // if (!requiredRole.includes(decodedUser?.role.roleName!)) {
+  if (!requiredRole.includes(decodedUser.role.role_name)) {
+    console.log("here")
     return null; // Don't render anything if the role doesn't match
   }
+
 
   return (
     <li>

@@ -125,8 +125,8 @@ export default function PlayersList() {
     },
   ];
   const columns = [
-    { Header: 'First name', accessor: (row: Player) => row.firstName },
-    { Header: 'Last name', accessor: (row: Player) => row.lastName },
+    { Header: 'First name', accessor: (row: Player) => row.first_name },
+    { Header: 'Last name', accessor: (row: Player) => row.last_name },
     { Header: 'Age', accessor: (row: Player) => row.age },
     { Header: 'Nationality', accessor: (row: Player) => row.nationality },
     { Header: 'Position', accessor: (row: Player) => row.positions.join(', ') },

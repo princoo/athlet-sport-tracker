@@ -23,7 +23,7 @@ export default function Stats() {
     isLoading: isPlayersLoading,
     // refetch: refetchPlayersStats,
   } = useGetSessionPlayersStatsQuery(
-    { sessionId: 'cd63ce40-8d0f-4eeb-b30a-a7cc2246a40a' },
+    { sessionId: '01970e99-a029-73b4-af8b-fc958d31ddb0' },
     // { skip: !selectedSiteId }, // Skip fetching if no site is selected
   );
   const columns = [

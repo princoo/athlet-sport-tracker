@@ -42,7 +42,7 @@ export default function RecordPlayerTest(props: {
 
   async function handleFormSubmit(data: any) {
     const selectedPlayer = playersData?.result.data.find(
-      (player) => `${player.firstName} ${player.lastName}` === filterValue,
+      (player) => `${player.first_name} ${player.last_name}` === filterValue,
     );
     if (!selectedPlayer) {
       setisPlayerWrong(true);
@@ -91,7 +91,7 @@ export default function RecordPlayerTest(props: {
                   error={isPlayerWrong}
                   onChange={setfilterValue}
                   data={playersData?.result.data.map(
-                    (player) => `${player.firstName} ${player.lastName}`,
+                    (player) => `${player.first_name} ${player.last_name}`,
                   )}
                   styles={{
                     input: { width: '100%', padding: '20px' },
@@ -105,7 +105,7 @@ export default function RecordPlayerTest(props: {
                   }}
                 />
               </div>
-              {sessionTest?.test.requiredMetrics.map((metric, idx) => (
+              {sessionTest?.test.required_metrics.map((metric, idx) => (
                 <div key={idx}>
                   <label
                     htmlFor={metric}

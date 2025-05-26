@@ -15,7 +15,7 @@ export interface ActiveSession {
   isActive: boolean;
   status: SessionStatus;
   createdAt: string;
-  tests: SessionTest[];
+  session_tests: SessionTest[];
   updatedAt: string;
 }
 export interface SelectSitePayload {

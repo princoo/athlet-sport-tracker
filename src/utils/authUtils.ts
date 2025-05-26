@@ -1,3 +1,4 @@
+import { storage } from "../core/storage";
 import { clearToken } from "../redux/slices/tokenSlice";
 import { store } from '../redux/store';
 import { jwtDecode } from 'jwt-decode';
@@ -16,11 +17,11 @@ export const logOut = () => {
 // Utility to decode the token
 export interface DecodedUser{
   id: string,
-  userName: string,
+  user_name: string,
   email: string,
   roleId: string,
   role:{
-    roleName: string
+    role_name: string
   }
 
 }
@@ -28,7 +29,9 @@ export const decodeToken = () => {
   const token = store.getState().token.value;
   try {
     if (token) {
-      const loggedUser:DecodedUser = jwtDecode(token);
+      // const loggedUser:DecodedUser = jwtDecode(token);
+       const loggedUser = JSON.parse(storage.getUser() ||"{}")
+      
       return loggedUser
     }
   } catch (error) {

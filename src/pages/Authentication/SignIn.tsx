@@ -56,10 +56,10 @@ const SignIn: React.FC = () => {
                     <input
                       type="text"
                       placeholder="Enter your email/username"
-                      {...register('username', {
+                      {...register('email', {
                         required: {
                           value: true,
-                          message: 'email/username is required',
+                          message: 'email is required',
                         },
                       })}
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
@@ -83,9 +83,9 @@ const SignIn: React.FC = () => {
                       </svg>
                     </span>
                   </div>
-                  {errors.username && (
+                  {errors.email && (
                     <div className="text-red-500">
-                      {errors.username.message}
+                      {errors.email.message}
                     </div>
                   )}
                 </div>
@@ -107,12 +107,12 @@ const SignIn: React.FC = () => {
                           value: 4,
                           message: 'Password is too short',
                         },
-                        pattern: {
-                          value:
-                            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{6,}$/,
-                          message:
-                            'Password must include at least one uppercase letter, one lowercase letter, one number, and one special character',
-                        },
+                        // pattern: {
+                        //   value:
+                        //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{6,}$/,
+                        //   message:
+                        //     'Password must include at least one uppercase letter, one lowercase letter, one number, and one special character',
+                        // },
                       })}
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />

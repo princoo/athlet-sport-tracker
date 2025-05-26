@@ -6,7 +6,7 @@ export interface Session {
   isActive: boolean;
   status: SessionStatus;
   createdAt: string;
-  tests: Test[];
+  session_tests: Test[];
   updatedAt: string;
 }
 export enum SessionStatus {

@@ -21,7 +21,10 @@ export interface DecodedToken {
 
 export const storage = {
   getToken: () => localStorage.getItem(TOKEN_NAME),
+  getUser: () => localStorage.getItem('LOGED_USER'),
   setToken: (token: string) => localStorage.setItem(TOKEN_NAME, token),
+  setUser: (user:any) => localStorage.setItem('LOGED_USER', JSON.stringify(user)),
+  removeUser: () => localStorage.removeItem('LOGED_USER'),
   removeToken: () => localStorage.removeItem(TOKEN_NAME),
 };
 const token = storage.getToken();

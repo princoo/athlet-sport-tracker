@@ -2,22 +2,22 @@ import { Gender } from "../Authentication/redux/interface";
 
 export interface Player extends PlayerPayload {
   id: string;
-  createdAt: string;
-  updatedAt: string;
+  created_at: string;
+  updated_at: string;
 }
 export interface SiteCoach {
   user: {
     id: string;
     email: string;
-    userName: string;
+    user_name: string;
     role: {
-      roleName: string;
+      role_name: string;
     };
     profile: {
       nationality: string;
       phone: string;
-      firstName: string;
-      lastName: string;
+      first_name: string;
+      last_name: string;
       avatarId: string | null;
     };
   };
@@ -57,15 +57,15 @@ export enum EducationLevel {
 
 
 export interface PlayerPayload {
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   age: number;
   dob: string;
   height: number;
   weight: number;
   foot: FootEnum;
   nationality: string;
-  acadStatus: string;
+  acad_status: string;
   positions: FootballPosition[];
   gender: Gender; 
 }

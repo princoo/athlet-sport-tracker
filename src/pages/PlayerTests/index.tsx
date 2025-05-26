@@ -51,7 +51,7 @@ export default function PlayerTests() {
                 </span>
                 <div className="mt-6">
                   <AvailableTests
-                    tests={activeSession.result.data.tests}
+                    tests={activeSession.result.data.session_tests}
                     selectedTest={handleSelectedTest}
                   />
                 </div>

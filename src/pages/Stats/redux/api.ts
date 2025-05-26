@@ -20,7 +20,7 @@ export const statsApi = baseApi.injectEndpoints({
         try {
           const { data } = await queryFulfilled;
         } catch ({ error }: any) {
-          toast.error(error.data.message);
+          toast.error(error.data.result.message);
         }
       },
     }),

@@ -85,7 +85,7 @@ export default function AddPlayer(props: {
                   <input
                     type="text"
                     id="name"
-                    {...register('firstName', {
+                    {...register('first_name', {
                       required: {
                         value: true,
                         message: 'First name is required',
@@ -94,9 +94,9 @@ export default function AddPlayer(props: {
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     // placeholder="Site name"
                   />
-                  {errors.firstName && (
+                  {errors.first_name && (
                     <div className="text-red-500">
-                      {errors.firstName.message}
+                      {errors.first_name.message}
                     </div>
                   )}
                 </div>
@@ -110,7 +110,7 @@ export default function AddPlayer(props: {
                   <input
                     type="text"
                     id="last"
-                    {...register('lastName', {
+                    {...register('last_name', {
                       required: {
                         value: true,
                         message: 'Last name is required',
@@ -119,9 +119,9 @@ export default function AddPlayer(props: {
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     // placeholder="Site name"
                   />
-                  {errors.lastName && (
+                  {errors.last_name && (
                     <div className="text-red-500">
-                      {errors.lastName.message}
+                      {errors.last_name.message}
                     </div>
                   )}
                 </div>
@@ -225,9 +225,9 @@ export default function AddPlayer(props: {
                       <option value="" disabled defaultValue={''} hidden>
                         Gender
                       </option>
-                      <option value="MALE">Male</option>
-                      <option value="FEMALE">Female</option>
-                      <option value="OTHER">Other</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                   {errors.foot && (
@@ -361,7 +361,7 @@ export default function AddPlayer(props: {
                     <select
                       className="w-full rounded-lg border border-stroke bg-gray-50 p-2.5 text-gray-900 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                       defaultValue=""
-                      {...register('acadStatus', {
+                      {...register('acad_status', {
                         required: {
                           value: true,
                           message: 'Status is required',
@@ -378,9 +378,9 @@ export default function AddPlayer(props: {
                       ))}
                     </select>
                   </div>
-                  {errors.acadStatus && (
+                  {errors.acad_status && (
                     <div className="text-red-500">
-                      {errors.acadStatus.message}
+                      {errors.acad_status.message}
                     </div>
                   )}
                 </div>
